@@ -17,4 +17,11 @@ export class AuthService {
   getUserData(): Observable<[]> {
     return this._http.get<[]>(this.url);
   }
+  login(): boolean {
+    if (localStorage.getItem('statut') == 'connected') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
