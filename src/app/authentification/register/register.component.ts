@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { passwordValidator } from '../passwordvalidator';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +30,11 @@ export class RegisterComponent {
     { Validators: passwordValidator }
   );
 
-  constructor(private _fb: FormBuilder) {}
+  constructor(
+    private _fb: FormBuilder,
+    private authService: AuthService,
+    private _router: Router
+  ) {}
 
   get name() {
     return this.userForm.get('name');
@@ -55,5 +61,14 @@ export class RegisterComponent {
     return this.userForm.get('confpassword');
   }
 
-  registerUserForm() {}
+  registerUserForm() {
+    console.log(this.userForm.value);
+    this.authService.registerUserData(this.userForm.value).subscribe(
+      (response) => {
+        console.log('success', response);
+        this._router.navigate(['employee-info/list']);
+      },
+      (error) => console.error('error!', error)
+    );
+  }
 }

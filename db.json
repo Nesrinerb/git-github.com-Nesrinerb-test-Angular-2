@@ -11,5 +11,17 @@
       "id": 1
     }
   ],
-  "user": []
+  "user": [
+    {
+      "name": "admin",
+      "address": "lac1",
+      "phone": "1234",
+      "genre": "Homme",
+      "date": "2000-01-01",
+      "email": "admin@test.com",
+      "password": "1234",
+      "confpassword": "1234",
+      "id": 1
+    }
+  ]
 }
