@@ -5,20 +5,10 @@
       "familyName": "Nesrine",
       "date": "1995-01-01",
       "matricule": "matricule d'employé",
-      "categorie": "Classe A",
-      "specialite": "Ingénierie",
+      "categorie": "Classe B",
+      "specialite": "Finance",
       "freeDate": 15,
       "id": 1
-    },
-    {
-      "name": "Firas",
-      "familyName": "Weslati",
-      "date": "1997-02-20",
-      "matricule": " EMP12345",
-      "categorie": "Classe D",
-      "specialite": "Finance",
-      "freeDate": 20,
-      "id": 2
     }
   ],
   "user": []

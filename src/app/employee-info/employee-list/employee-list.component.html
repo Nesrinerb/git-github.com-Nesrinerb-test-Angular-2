@@ -1,1 +1,39 @@
-<p>employee-list works!</p>
+<div class="container">
+    <div class="m-5">
+        <h3>Ajouter un Employé <button type="button"  routerLink="create-article"  class="btn btn-dark">Ajouter</button></h3>   
+    </div>
+
+    <div class="table-title m-5">
+      <h2>Liste de Employés</h2>
+    </div>
+   
+      <div class="row col-6 m-5">
+        <!-- <input class="form-control me-2 " [(ngModel)]="searchtext" type="text" placeholder="Chercher un Employé">  -->
+      </div >
+    
+
+    <table class="table  table-hover table-dark table-striped" id="tableau">
+     
+      <thead>
+        <tr class="table-dark">
+          <th>id</th>
+          <th>Nom :</th>
+          <th>Prénom :</th>
+          <th>Spécialité :</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="tBody" *ngFor="let employee of employeeArray">
+          <th>{{employee.id}}</th>
+          <td>{{employee.name}}</td>
+          <td>{{employee.familyName}}</td>
+          <td>{{employee.specialite}}</td>
+          <td>
+            <a  class="btn btn-danger me-2" (click)="removeEmployee(employee.id)" >Supprimer</a>
+            <a  class="btn  btn-success" (click)="updateEmployee(employee.id)">Update</a>
+          </td>
+        </tr>
+    </table>
+    
+</div>
