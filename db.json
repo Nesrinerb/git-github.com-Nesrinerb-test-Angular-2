@@ -1,7 +1,7 @@
 {
   "employee": [
     {
-      "name": "Rabia",
+      "name": "Rabiaa",
       "familyName": "Nesrine",
       "date": "1995-01-01",
       "matricule": "matricule d'employé",
@@ -22,6 +22,39 @@
       "password": "1234",
       "confpassword": "1234",
       "id": 1
+    },
+    {
+      "name": "admin2",
+      "address": "lac1",
+      "phone": "12345",
+      "genre": "Femme",
+      "date": "2000-01-01",
+      "email": "test2@test.com",
+      "password": "123",
+      "confpassword": "123",
+      "id": 2
+    },
+    {
+      "name": "admin2",
+      "address": "lac1",
+      "phone": "12345",
+      "genre": "Femme",
+      "date": "2000-01-01",
+      "email": "test2@test.com",
+      "password": "123",
+      "confpassword": "123",
+      "id": 3
+    },
+    {
+      "name": "aaa",
+      "address": "aaa",
+      "phone": "123",
+      "genre": "Femme",
+      "date": "2000-01-01",
+      "email": "test@gmail.com",
+      "password": "12",
+      "confpassword": "12",
+      "id": 4
     }
   ]
 }

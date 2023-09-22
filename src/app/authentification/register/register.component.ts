@@ -10,6 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  constructor(
+    private _fb: FormBuilder,
+    private authService: AuthService,
+    private _router: Router
+  ) {}
   userForm = this._fb.group(
     {
       name: ['', Validators.required],
@@ -29,12 +34,6 @@ export class RegisterComponent {
     },
     { Validators: passwordValidator }
   );
-
-  constructor(
-    private _fb: FormBuilder,
-    private authService: AuthService,
-    private _router: Router
-  ) {}
 
   get name() {
     return this.userForm.get('name');
@@ -66,7 +65,7 @@ export class RegisterComponent {
     this.authService.registerUserData(this.userForm.value).subscribe(
       (response) => {
         console.log('success', response);
-        this._router.navigate(['employee-info/list']);
+        this._router.navigate(['auth/login']);
       },
       (error) => console.error('error!', error)
     );
