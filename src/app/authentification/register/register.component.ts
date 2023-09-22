@@ -32,7 +32,7 @@ export class RegisterComponent {
       password: ['', Validators.required],
       confpassword: [''],
     },
-    { Validators: passwordValidator }
+    { validators: passwordValidator }
   );
 
   get name() {
