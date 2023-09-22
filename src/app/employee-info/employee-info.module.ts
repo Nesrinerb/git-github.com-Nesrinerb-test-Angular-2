@@ -6,18 +6,21 @@ import { EmployeeInfoComponent } from './employee-info.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     EmployeeInfoComponent,
     EmployeeListComponent,
     AddEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
   ],
   imports: [
     CommonModule,
-    EmployeeInfoRoutingModule
-  ]
+    EmployeeInfoRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
 })
-export class EmployeeInfoModule { }
+export class EmployeeInfoModule {}

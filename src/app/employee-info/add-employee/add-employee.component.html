@@ -1,1 +1,64 @@
-<p>add-employee works!</p>
+<div class="container min-vh-100 d-flex justify-content-center align-items-center ">
+    
+    <div class="row col-10">
+        <h3 class="text-center m-5">Ajouter un Employé</h3>
+        {{addEmployeeForm.value |json}}
+        <form [formGroup]="addEmployeeForm" (ngSubmit)="addEmployee()" >
+            <div>
+                <label  class="form-label m-2 fw-semibolder">Nom :</label>
+                <input type="text" [class.is-invalid]="name?.invalid && name?.touched" formControlName="name"  class="form-control"  />
+                <small [class.d-none]="name?.valid || name?.untouched  " class="text-danger">Nom est obligatoire!</small>
+            </div>
+
+            <div>
+                <label  class="form-label m-2 fw-semibolder">Prénom :</label>
+                <input type="text" [class.is-invalid]="familyName?.invalid && familyName?.touched" formControlName="familyName"  class="form-control"  />
+                <small [class.d-none]="familyName?.valid || familyName?.untouched  " class="text-danger">Prénom est obligatoire!</small>
+            </div>
+
+            <div>
+                <label for="date" class="form-label m-2 fw-semibolder">Date de naissance:</label>
+                <input type="date" formControlName="date" class="form-control"  [class.is-invalid]="date?.invalid && date?.touched"/>
+                <small class="text-danger" [class.d-none]="date?.valid || date?.untouched">Date de naissance est obligatoire!</small>
+            </div>
+
+            <div>
+                <label  class="form-label m-2 fw-semibolder">Matricule :</label>
+                <input type="text" [class.is-invalid]="matricule?.invalid && matricule?.touched" formControlName="matricule"  class="form-control"  />
+                <small [class.d-none]="matricule?.valid || matricule?.untouched  " class="text-danger">Matricule est obligatoire!</small>
+            </div>
+  
+            <div>
+                <label  class="form-label m-2 fw-semibolder">Catégorie:</label>
+                <select formControlName="categorie" id="categorie" class="form-select" [class.is-invalid]="categorie?.invalid && categorie?.touched">
+                  <option>Classe A </option>
+                  <option>Classe B </option>
+                  <option>Classe C </option>
+                  <option>Classe D </option>
+                </select>
+                <small class="text-danger" [class.d-none]="categorie?.valid || categorie?.untouched">Catégorie est obligatoire!</small>
+            </div>
+
+            <div>
+                <label  class="form-label m-2 fw-semibolder">Spécialité:</label>
+                <select formControlName="specialite" class="form-select" [class.is-invalid]="specialite?.invalid && specialite?.touched">
+                  <option>Informatique et technologie</option>
+                  <option>Ingénierie</option>
+                  <option>Finance</option>
+                  <option>Marketing et publicité</option>
+                </select>
+                <small class="text-danger" [class.d-none]="specialite?.valid || specialite?.untouched">Spécialité est obligatoire!</small>
+            </div>
+
+            <div>
+                <label  class="form-label m-2 fw-semibolder">Jour de congée :</label>
+                <input type="number" [class.is-invalid]="freeDate?.invalid && freeDate?.touched" formControlName="freeDate"  class="form-control"  />
+                <small [class.d-none]="freeDate?.valid || freeDate?.untouched  " class="text-danger">Jour de congée est obligatoire!</small>
+            </div>
+            
+              
+            <button [disabled]="!addEmployeeForm.valid" type="submit" class="btn btn-dark m-3">Ajouter</button>
+              
+        </form>
+    </div>
+</div>
